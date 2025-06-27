@@ -1,1 +1,10 @@
+<h1>{{title}}</h1>
+<button (click)="updateWord()">Nueva palabra</button>
+
+<div id="wordDiv">
+    <div *ngFor="let letra of letters" class="letterDiv">
+        <span>{{letra}}</span>
+        <span class="letterHolding"></span>
+    </div>
+</div>
 <router-outlet />
