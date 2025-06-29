@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
 
-import { Word } from './word';
+@Injectable({
+  providedIn: 'root'
+})
+export class WordService {
+  private words: string[] = [
+    'Angular', 'Computadora', 'Monitor', 'Compilacion',
+    'Ahorcado', 'Laboratorio', 'Gato', 'Perro', 'Diccionario'
+  ];
 
-describe('Word', () => {
-  let service: Word;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Word);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  getRandomWord(): string {
+    const index = Math.floor(Math.random() * this.words.length);
+    return this.words[index].toLowerCase();
+  }
+}
