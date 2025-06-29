@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { WordService } from '../../services/word.service';
+import { WordService } from '../../services/word';
 
 @Component({
   selector: 'app-game',
