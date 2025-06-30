@@ -1,1 +1,64 @@
-<p>game works!</p>
+<div class="game-container">
+  <div class="game-board">
+    <!-- Header -->
+    <div class="game-header">
+      <h1>🎮 Juego del Ahorcado</h1>
+      <button class="home-btn" (click)="goHome()">🏠 Inicio</button>
+    </div>
+
+    <!-- Hangman Drawing -->
+    <div class="hangman-display">
+      <pre class="hangman-art">{{ hangmanDrawing.join('\n') }}</pre>
+      <div class="wrong-count">
+        Errores: {{ wrongGuesses }} / {{ maxWrongGuesses }}
+      </div>
+    </div>
+
+    <!-- Word Display -->
+    <div class="word-display">
+      <h2>{{ displayWord }}</h2>
+    </div>
+
+    <!-- Input Section -->
+    <div class="input-section" *ngIf="!isGameOver">
+      <label for="letterInput">Ingresa una letra:</label>
+      <input 
+        id="letterInput"
+        type="text" 
+        [(ngModel)]="currentLetter" 
+        (keypress)="onKeyPress($event)"
+        maxlength="1"
+        class="letter-input"
+        placeholder="A"
+        #letterInput>
+      <button 
+        class="guess-btn" 
+        (click)="guessLetter()"
+        [disabled]="!currentLetter">
+        Adivinar
+      </button>
+    </div>
+
+    <!-- Message Display -->
+    <div class="message" [ngClass]="{'success': message.includes('Correcto'), 'error': message.includes('incorrecta') || message.includes('Perdiste'), 'info': !message.includes('Correcto') && !message.includes('incorrecta') && !message.includes('Perdiste')}">
+      {{ message }}
+    </div>
+
+    <!-- Guessed Letters -->
+    <div class="guessed-letters" *ngIf="guessedLetters.length > 0">
+      <h3>Letras usadas:</h3>
+      <div class="letters-grid">
+        <span 
+          *ngFor="let letter of guessedLetters" 
+          class="letter-badge">
+          {{ letter }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Game Controls -->
+    <div class="game-controls" *ngIf="isGameOver">
+      <button class="new-game-btn" (click)="newGame()">🔄 Nuevo Juego</button>
+    </div>
+  </div>
+</div>
