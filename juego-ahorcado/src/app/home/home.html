@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="home-card">
+    <h1>🎮 {{ title }}</h1>
+    <p class="description">
+      ¡Bienvenido al juego del ahorcado! 
+      Adivina la palabra secreta letra por letra antes de que se complete el dibujo.
+    </p>
+    
+    <div class="game-info">
+      <h3>📋 Instrucciones:</h3>
+      <ul>
+        <li>Tienes 6 intentos fallidos máximo</li>
+        <li>Las palabras son sobre programación y tecnología</li>
+        <li>Escribe una letra y presiona Enter</li>
+        <li>¡Diviértete y aprende!</li>
+      </ul>
+    </div>
+
+    <button class="start-button" (click)="startGame()">
+      🚀 Comenzar Juego
+    </button>
+  </div>
+</div>
