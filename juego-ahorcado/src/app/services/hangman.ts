@@ -49,7 +49,7 @@ export class HangmanService {
   // Adivinar una letra
   guessLetter(letter: string): boolean {
     letter = letter.toUpperCase();
-    
+
     if (this.guessedLetters.includes(letter)) {
       return false; // Ya fue adivinada
     }
