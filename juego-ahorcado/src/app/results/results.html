@@ -1,1 +1,78 @@
-<p>results works!</p>
+<div class="results-container">
+  <div class="results-card" [ngClass]="{'win': isWin, 'lose': !isWin}">
+    <!-- Result Icon -->
+    <div class="result-icon">
+      {{ resultIcon }}
+    </div>
+
+    <!-- Result Title -->
+    <h1 class="result-title">{{ resultTitle }}</h1>
+
+    <!-- Result Message -->
+    <p class="result-message">{{ resultMessage }}</p>
+
+    <!-- Word Display -->
+    <div class="word-reveal">
+      <h2>La palabra era:</h2>
+      <div class="word-display">{{ word }}</div>
+    </div>
+
+    <!-- Emojis -->
+    <div class="result-emojis">{{ resultEmoji }}</div>
+
+    <!-- Statistics (opcional para futuras mejoras) -->
+    <div class="stats" *ngIf="isWin">
+      <div class="stat-item">
+        <span class="stat-label">¡Excelente trabajo!</span>
+        <p>Has demostrado tus conocimientos de programación</p>
+      </div>
+    </div>
+
+    <div class="stats" *ngIf="!isWin">
+      <div class="stat-item">
+        <span class="stat-label">¡No te rindas!</span>
+        <p>Cada intento te hace mejor programador</p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button class="play-again-btn" (click)="playAgain()">
+        🔄 Jugar de Nuevo
+      </button>
+      <button class="home-btn" (click)="goHome()">
+        🏠 Ir al Inicio
+      </button>
+    </div>
+
+    <!-- Fun Facts -->
+    <div class="fun-fact" *ngIf="word">
+      <div class="fact-content">
+        <h3>💡 Dato Curioso:</h3>
+        <p *ngIf="word === 'ANGULAR'">Angular es un framework de desarrollo web creado por Google</p>
+        <p *ngIf="word === 'TYPESCRIPT'">TypeScript es un superconjunto de JavaScript desarrollado por Microsoft</p>
+        <p *ngIf="word === 'JAVASCRIPT'">JavaScript fue creado en solo 10 días por Brendan Eich en 1995</p>
+        <p *ngIf="word === 'PROGRAMACION'">La programación es el arte de resolver problemas paso a paso</p>
+        <p *ngIf="word === 'DESARROLLO'">El desarrollo de software es una de las profesiones más demandadas</p>
+        <p *ngIf="word === 'FRONTEND'">Frontend se refiere a la parte visual de una aplicación web</p>
+        <p *ngIf="word === 'BACKEND'">Backend maneja la lógica del servidor y las bases de datos</p>
+        <p *ngIf="word === 'COMPONENTE'">Los componentes son bloques reutilizables de código en Angular</p>
+        <p *ngIf="word === 'SERVICIO'">Los servicios en Angular manejan la lógica de negocio</p>
+        <p *ngIf="word === 'DIRECTIVA'">Las directivas en Angular manipulan el DOM dinámicamente</p>
+        <p *ngIf="word === 'MODULO'">Los módulos organizan y agrupan funcionalidades relacionadas</p>
+        <p *ngIf="word === 'ROUTING'">El routing permite la navegación entre diferentes vistas</p>
+        <p *ngIf="word === 'BOOTSTRAP'">Bootstrap es un framework CSS para diseño responsive</p>
+        <p *ngIf="word === 'RESPONSIVE'">El diseño responsive se adapta a diferentes tamaños de pantalla</p>
+        <p *ngIf="word === 'FRAMEWORK'">Los frameworks aceleran el desarrollo de aplicaciones</p>
+        <p *ngIf="word === 'APLICACION'">Una aplicación resuelve problemas específicos de los usuarios</p>
+        <p *ngIf="word === 'TECNOLOGIA'">La tecnología transforma la manera en que vivimos y trabajamos</p>
+        <p *ngIf="word === 'SOFTWARE'">El software es el conjunto de instrucciones que hace funcionar las computadoras</p>
+        <p *ngIf="word === 'ALGORITMO'">Un algoritmo es una secuencia de pasos para resolver un problema</p>
+        <p *ngIf="word === 'VARIABLE'">Las variables almacenan datos que pueden cambiar durante la ejecución</p>
+        <p *ngIf="!['ANGULAR', 'TYPESCRIPT', 'JAVASCRIPT', 'PROGRAMACION', 'DESARROLLO', 'FRONTEND', 'BACKEND', 'COMPONENTE', 'SERVICIO', 'DIRECTIVA', 'MODULO', 'ROUTING', 'BOOTSTRAP', 'RESPONSIVE', 'FRAMEWORK', 'APLICACION', 'TECNOLOGIA', 'SOFTWARE', 'ALGORITMO', 'VARIABLE'].includes(word)">
+          ¡Sigue aprendiendo sobre programación y tecnología!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
