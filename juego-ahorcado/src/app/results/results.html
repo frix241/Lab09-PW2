@@ -1,1 +1,10 @@
-<p>results works!</p>
+<div class="results-container">
+  <h1 *ngIf="won">🎉 ¡Felicidades! Ganaste</h1>
+  <h1 *ngIf="!won">😢 Has perdido</h1>
+
+  <p>La palabra era: <strong>{{ word }}</strong></p>
+
+  <button (click)="playAgain()">🔁 Jugar de nuevo</button>
+  <button (click)="goHome()">🏠 Volver al inicio</button>
+</div>
+
