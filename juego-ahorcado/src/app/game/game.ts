@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { HangmanService } from '../services/hangman';
+
 @Component({
   selector: 'app-game',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './game.html',
-  styleUrl: './game.css'
+  styleUrls: ['./game.css']
 })
 export class Game implements OnInit {
   displayWord = '';
@@ -64,3 +67,4 @@ export class Game implements OnInit {
     return this.guessedLetters.includes(letter);
   }
 }
+

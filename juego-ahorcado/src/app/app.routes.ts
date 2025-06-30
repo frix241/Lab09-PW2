@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { Home } from './home/home';
 import { Game } from './game/game';
 import { Results } from './results/results';
@@ -9,3 +10,5 @@ export const routes: Routes = [
   { path: 'results', component: Results },
   { path: '**', redirectTo: '' }
 ];
+
+export const appRouting = provideRouter(routes);
