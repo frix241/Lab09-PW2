@@ -1,59 +1,170 @@
-# JuegoAhorcado
+# 🎮 Juego del Ahorcado - Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+Un divertido y educativo juego del ahorcado desarrollado con **Angular** que incluye palabras relacionadas con programación y tecnología.
 
-## Development server
+## 📋 Descripción
 
-To start a local development server, run:
+Este proyecto implementa el clásico juego del ahorcado con una interfaz moderna y atractiva. Los jugadores deben adivinar palabras relacionadas con programación, desarrollo web y tecnología antes de que se complete el dibujo del ahorcado.
 
+## ✨ Características
+
+- 🎯 **20 palabras** relacionadas con programación y tecnología
+- 🎨 **Interfaz moderna** con diseño responsive
+- 🖼️ **Dibujo del ahorcado** que se actualiza en tiempo real
+- 📊 **Pantalla de resultados** con datos curiosos sobre cada palabra
+- 🔄 **Navegación fluida** entre diferentes secciones
+- 📱 **Compatible con dispositivos móviles**
+- 🎵 **Animaciones** y efectos visuales atractivos
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Angular 20.0.4** - Framework principal
+- **TypeScript** - Lenguaje de programación
+- **CSS3** - Estilos y animaciones
+- **HTML5** - Estructura de la aplicación
+- **Angular Router** - Navegación entre componentes
+- **Angular Forms** - Manejo de formularios
+
+## 📦 Instalación
+
+### Prerequisitos
+
+Asegúrate de tener instalado:
+- **Node.js** (versión 18 o superior)
+- **npm** (viene con Node.js)
+- **Angular CLI** (versión 20 o superior)
+
+### Pasos de instalación
+
+1. **Clonar el repositorio**
+```bash
+git clone [URL_DEL_REPOSITORIO]
+cd juego-ahorcado
+```
+
+2. **Instalar dependencias**
+```bash
+npm install
+```
+
+3. **Ejecutar la aplicación**
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. **Abrir en el navegador**
+Navega a `http://localhost:4200/`
 
-## Code scaffolding
+## 🎮 Cómo Jugar
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Inicio**: Haz clic en "🚀 Comenzar Juego" en la pantalla principal
+2. **Juego**: 
+   - Ingresa una letra en el campo de texto
+   - Presiona "Adivinar" o la tecla Enter
+   - Tienes máximo 6 errores antes de perder
+3. **Resultado**: Verás tu puntuación y datos curiosos sobre la palabra
 
-```bash
-ng generate component component-name
+## 📁 Estructura del Proyecto
+
+```
+src/app/
+├── home/              # Componente de página principal
+│   ├── home.ts
+│   ├── home.html
+│   └── home.css
+├── game/              # Componente del juego
+│   ├── game.ts
+│   ├── game.html
+│   └── game.css
+├── results/           # Componente de resultados
+│   ├── results.ts
+│   ├── results.html
+│   └── results.css
+├── services/          # Servicios de la aplicación
+│   └── hangman.ts     # Lógica del juego
+├── app.routes.ts      # Configuración de rutas
+├── app.config.ts      # Configuración de la app
+├── app.html           # Template principal
+└── app.ts             # Componente principal
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🧠 Palabras del Juego
 
+El juego incluye 20 palabras relacionadas con:
+- **Frameworks**: Angular, Bootstrap
+- **Lenguajes**: JavaScript, TypeScript
+- **Conceptos**: Programación, Desarrollo, Frontend, Backend
+- **Tecnologías**: Responsive, Framework, Algoritmo, Variable
+- Y muchas más...
+
+## 🚀 Comandos Útiles
+
+### Servidor de desarrollo
 ```bash
-ng generate --help
+ng serve
 ```
 
-## Building
-
-To build the project run:
-
+### Compilar para producción
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Ejecutar pruebas
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### Generar nuevos componentes
 ```bash
-ng e2e
+ng generate component nombre-componente
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 👥 Trabajo en Equipo
 
-## Additional Resources
+Este proyecto está configurado para trabajo colaborativo:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clonar** el repositorio
+2. **Crear una rama** para tu feature: `git checkout -b feature/nueva-caracteristica`
+3. **Hacer commits** descriptivos: `git commit -m "Agregar nueva funcionalidad"`
+4. **Push** a tu rama: `git push origin feature/nueva-caracteristica`
+5. **Crear Pull Request** para revisar cambios
+
+## 📝 Posibles Mejoras Futuras
+
+- [ ] Sistema de puntuación
+- [ ] Diferentes niveles de dificultad
+- [ ] Más categorías de palabras
+- [ ] Sonidos y efectos de audio
+- [ ] Modo multijugador
+- [ ] Guardar estadísticas del jugador
+- [ ] Pistas para las palabras
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Para contribuir:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto es de uso educativo para el curso de Programación Web 2.
+
+## 👨‍💻 Autores
+
+- **[Nombre del Equipo]** - *Desarrollo inicial* - [GitHub del equipo]
+- **[Integrante 1]** - *Frontend y diseño*
+- **[Integrante 2]** - *Lógica del juego*
+- **[Integrante 3]** - *Testing y documentación*
+
+## 🙏 Agradecimientos
+
+- Al profesor por la guía en el desarrollo
+- A la comunidad de Angular por la documentación
+- A los compañeros de clase por el feedback
+
+---
+⭐ **¡No olvides dar una estrella al proyecto si te gustó!** ⭐
