@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { HangmanService } from '../services/hangman';
 @Component({
   selector: 'app-game',
   imports: [],
