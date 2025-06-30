@@ -1,1 +1,14 @@
-<p>game works!</p>
+<div class="container">
+  <h1>Juego del Ahorcado</h1>
+
+  <h2>{{ displayWord }}</h2>
+  <p>Errores: {{ wrongGuesses }} / {{ maxWrongGuesses }}</p>
+
+  <div class="keyboard">
+    <button *ngFor="let letter of alphabet"
+            (click)="guess(letter)"
+            [disabled]="isLetterDisabled(letter)">
+      {{ letter }}
+    </button>
+  </div>
+</div>
