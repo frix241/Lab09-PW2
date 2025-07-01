@@ -1,26 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HangmanService } from '../services/hangman';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { HangmanService } from "../services/hangman";
 
 @Component({
-  selector: 'app-game',
+  selector: "app-game",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './game.html',
-  styleUrls: ['./game.css']
+  templateUrl: "./game.html",
+  styleUrls: ["./game.css"],
 })
 export class Game implements OnInit {
-  displayWord = '';
+  displayWord = "";
   guessedLetters: string[] = [];
   wrongGuesses = 0;
   maxWrongGuesses = 6;
   gameOver = false;
   gameWon = false;
 
-  alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  constructor(private hangmanService: HangmanService, private router: Router) {}
+  constructor(
+    private hangmanService: HangmanService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.startGame();
@@ -40,18 +43,18 @@ export class Game implements OnInit {
     this.updateState();
 
     if (this.hangmanService.isGameWon()) {
-      this.router.navigate(['/result'], {
+      this.router.navigate(["/results"], {
         state: {
           won: true,
-          word: this.hangmanService.getCurrentWord()
-        }
+          word: this.hangmanService.getCurrentWord(),
+        },
       });
     } else if (this.hangmanService.isGameLost()) {
-      this.router.navigate(['/result'], {
+      this.router.navigate(["/results"], {
         state: {
           won: false,
-          word: this.hangmanService.getCurrentWord()
-        }
+          word: this.hangmanService.getCurrentWord(),
+        },
       });
     }
   }
@@ -67,4 +70,3 @@ export class Game implements OnInit {
     return this.guessedLetters.includes(letter);
   }
 }
-
